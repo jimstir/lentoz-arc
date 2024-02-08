@@ -7,6 +7,7 @@ import AuthLayout from "./components/Layout/AuthLayout";
 import GuestLayout from "./components/Layout/GuestLayout";
 import Login from "./pages/auth/Login";
 import Blank from "./pages/Blank";
+import Reserve from "./pages/Reserve";
 import NotFound from "./pages/NotFound";
 import Form from "./pages/Form";
 import RegisterIndex from "./pages/auth/Register";
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Dashboard />}></Route>
         <Route path="/table" element={<Table />}></Route>
         <Route path="/blank" element={<Blank />}></Route>
+		  <Route path="/reserve" element={<Reserve />}></Route>
         <Route path="/404" element={<NotFound />}></Route>
         <Route path="/form" element={<Form />}></Route>
         <Route path="/profile" element={<Blank />}></Route>

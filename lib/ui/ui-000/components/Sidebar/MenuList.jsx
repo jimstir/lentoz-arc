@@ -19,7 +19,7 @@ function MenuList({ menus, ...props }) {
             </li>
           ) : (
             <li key={menu.label} className="mt-5 mb-3">
-              <span className="text-gray-500 font-medium uppercase text-xs mx-2">
+              <span className="text-blue-500 font-medium uppercase text-xl mx-2">
                 {menu.label} {menu.role}
               </span>
             </li>

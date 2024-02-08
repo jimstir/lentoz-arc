@@ -1,10 +1,11 @@
 import { faBars, faBell, faMessage } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Button } from 'flowbite-react';
+import Wallet from "../Wallet/connectWallets.jsx";
 import React from "react";
 
 function Index({ toggle }) {
-  const avatar =
-    "";
+  	
 
   return (
     <>
@@ -28,14 +29,13 @@ function Index({ toggle }) {
                     <FontAwesomeIcon icon={faBell} />
                   </span>
                 </li>
-                <li>
-                  <span>
-                    <img
-                      className="rounded-full h-9 w-9 border cursor-pointer"
-                      src={avatar}
-                      alt="Avatar"
-                    />
+					  <li>
+                  <span className="h-9 w-9 cursor-pointer text-gray-600">
+                    <Wallet />
                   </span>
+                </li>
+                <li>
+						 
                 </li>
               </ul>
             </div>
