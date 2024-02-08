@@ -1,10 +1,11 @@
-import { faLeaf, faSignOut } from "@fortawesome/free-solid-svg-icons";
+import { faFloppyDisk, faSignOut } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useRef, useState } from "react";
 import initMenus from "../../data/menus.js";
 import "./sidebar.css";
-import SidebarLogo from "./SidebarLogo.jsx";
+import Logo from "./Logo.jsx";
 import SidebarSearch from "./SidebarSearch.jsx";
+import Wallet from "../Wallet/connectWallets.jsx"
 import MenuList from "./MenuList.jsx";
 import { useNavigate } from "react-router-dom";
 
@@ -28,16 +29,7 @@ function Sidebar({ ...props }) {
     }
   };
 
-  const clearSearch = () => {
-    search.current.value = "";
-    setMenus(initMenus);
-    setScButton(false);
-  };
-
-  const logout = () => {
-    navigate("/auth/login");
-  };
-
+  
   return (
     <>
       <aside
@@ -47,32 +39,23 @@ function Sidebar({ ...props }) {
         {/* Sidebar wrapper */}
         <div className="md:w-64 border-r-2 border-gray-100 h-full flex-col flex flex-shrink-0">
           {/* Logo */}
-          <SidebarLogo toggle={props.toggle} icon={faLeaf} text="Laravel" />
-
-          {/* Search Menu */}
-          <SidebarSearch
-            clearSearch={clearSearch}
-            handleChange={handleChange}
-            scButton={scButton}
-            search={search}
-          />
-
+          <Logo toggle={props.toggle} icon={faFloppyDisk} text="Lentož" />
+			 
           {/* Menu */}
           <MenuList menus={menus} toggle={props.toggle} />
-
-          {/* Profile */}
-          <div className="pt-2 border-t border-gray-300">
-            <div className="py-2 px-4">
-              {/* Logout Button */}
-              <button
-                className="py-2 px-4 border border-emerald-500 bg-emerald-600 w-full rounded-full text-gray-200 hover:bg-emerald-600 hover:border-emerald-600 justify-end text-sm"
-                onClick={() => logout()}
-              >
-                <FontAwesomeIcon icon={faSignOut}></FontAwesomeIcon> Logout
-              </button>
+			  
+			  <div className="pt-2 border-t border-gray-300">
+            <div className="py-2 px-4 mx:auto">
+              
+					{/* Wallet Button */}
+              <Wallet />
             </div>
           </div>
+          
         </div>
+		  
+		  
+		  
       </aside>
 
       {props.className === "mobile" && (
