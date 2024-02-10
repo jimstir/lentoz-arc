@@ -37,7 +37,6 @@ contract ReserveVault is ERC4626 {
     }
 
     struct userAccount{
-        //uint256 numOfProposals;
         //user => specifc numOfProposals by user => corensanding ProposalNum ex. 1st vote is proposal number 5, second vote is proposal number 7
         uint256 proposal;
         //user => proposalNum => amount
@@ -80,6 +79,7 @@ contract ReserveVault is ERC4626 {
              _agent = false;
              _rOwner = msg.sender;
              _authUsers[msg.sender] = true;
+            _rAuth = '0x';
          }    
     }
     /**
@@ -232,7 +232,7 @@ contract ReserveVault is ERC4626 {
     /**
     * @dev Make a deposit to proposal creating new shares
     * - MUST be open proposal
-    * - MUST NOT be closed proposal
+    * - MUST NOT be a proposal that was previously closed
     * NOTE: using the deposit() will cause shares to not be accounted for in a proposal
     * @param assets amount being deposited
     * @param receiver address of depositor
