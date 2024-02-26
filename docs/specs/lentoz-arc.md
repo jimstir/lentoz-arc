@@ -1,1 +1,1 @@
-##Lentož Architecture Specification
+## Lentož Architecture Specification
