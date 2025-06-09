@@ -1,0 +1,39 @@
+{
+  "name": "lentoz-arc",
+  "version": "1.0.0",
+  "description": "Lentoz Arc Protocol",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "test:coverage": "hardhat coverage",
+    "test:gas": "REPORT_GAS=true npx hardhat test",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:rinkeby": "hardhat run scripts/deploy.js --network rinkeby",
+    "verify": "hardhat verify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "@nomiclabs/hardhat-etherscan": "^3.0.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@openzeppelin/contracts": "^4.5.0",
+    "@openzeppelin/contracts-upgradeable": "^4.5.0",
+    "chai": "^4.3.6",
+    "dotenv": "^16.0.0",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.5.4",
+    "hardhat": "^2.9.1",
+    "hardhat-contract-sizer": "^2.5.1",
+    "hardhat-deploy": "^0.11.4",
+    "hardhat-gas-reporter": "^1.0.8",
+    "prettier": "^2.6.2",
+    "prettier-plugin-solidity": "^1.0.0",
+    "solidity-coverage": "^0.7.18"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.5.0"
+  }
+}
